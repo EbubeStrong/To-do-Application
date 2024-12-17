@@ -24,7 +24,7 @@ const TodoForm = ({ onCreateTodo }) => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="mb-8 flex flex-col gap-4 sm:gap-6 md:flex-row lg:gap-8 flex-wrap"
+      className="mb-8 flex flex-col gap-4 sm:gap-6 md:flex-row lg:gap-8"
     >
       <Input
         type="text"
@@ -33,14 +33,16 @@ const TodoForm = ({ onCreateTodo }) => {
         onChange={(e) => setTitle(e.target.value)}
         className="flex-grow"
       />
+      <div className="flex justify-between gap-4">
       <Input
         type="date"
         value={dueDate}
         onChange={(e) => setDueDate(e.target.value)}
       />
-      <Button type="submit" className=" hover:bg-green-700" style={{width: "100px"}}>
+      <Button type="submit" className=" hover:bg-green-700 ">
         Add Todo
       </Button>
+      </div>
     </form>
   );
 };
