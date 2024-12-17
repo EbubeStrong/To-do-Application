@@ -82,8 +82,9 @@
 
 @media (max-width: 750px) {
   .landing-container .text-center {
-    height: 100vh;
+    height: 70vh;
     margin: 0;
     width: 100%;
+  backdrop-filter: blur(3px);
   }
 }

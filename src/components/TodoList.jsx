@@ -247,10 +247,11 @@ const TodoList = () => {
                   <p>Due: {new Date(todo.dueDate).toLocaleDateString()}</p>
                 )}
               </div>
-              <div className="space-x-3 space-y-3">
+              <div className="space-x-3 space-y-3 sm:break-words">
                 <Button
                   onClick={() => handleUpdateTodo(todo)}
                   variant="outline"
+                  className="sm:break-words"
                 >
                   {todo.completed ? "Mark Incomplete" : "Mark Complete"}
                 </Button>
