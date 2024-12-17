@@ -1,0 +1,50 @@
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { Button } from "../../components/components/ui/button";
+import "./landingPage.css"
+
+const words = ['Welcome', 'To', 'Your', 'Todo', 'App'];
+
+const LandingPage = () => {
+  const [currentWordIndex, setCurrentWordIndex] = useState(0);
+
+    useEffect(() => {
+      const interval = setInterval(() => {
+        setCurrentWordIndex((prevIndex) => (prevIndex + 1) % words.length);
+      }, 2500); // Adjust timing to match the animation duration
+
+      return () => clearInterval(interval); // Cleanup on component unmount
+    }, [words.length]);
+
+  return (
+    <div className="landing-container">
+      <div className="text-center">
+        {/* <h1 className="text-6xl font-bold mb-10 transition-all duration-800 ease-in-out">
+          {words[currentWordIndex]}
+        </h1> */}
+        <div className="slide-up-wrapper">
+          <h1
+            key={currentWordIndex}
+            className="slide-up-text font-bold"
+          >
+            {words[currentWordIndex]}
+          </h1>
+        </div>
+        <p className="text-2xl mb-8">
+          To check your Todo, click below <br />
+          👇
+        </p>
+        <Button asChild>
+          <Link
+            to="/todos"
+            className="btn text-blue-900 px-6 py-3 rounded-full text-xl font-semibold hover:text-white transition duration-300"
+          >
+            View Todos
+          </Link>
+        </Button>
+      </div>
+    </div>
+  );
+};
+
+export default LandingPage;

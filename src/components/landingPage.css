@@ -1,0 +1,111 @@
+/* Sliding animation for the h1
+.slide-up-enter {
+  opacity: 0;
+  transform: translateY(100%);
+}
+.slide-up-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 1s, transform 1s ease-in-out;
+}
+.slide-up-exit {
+  opacity: 1;
+  transform: translateY(0);
+}
+.slide-up-exit-active {
+  opacity: 0;
+  transform: translateY(-100%);
+  transition: opacity 1s, transform 1s ease-in-out;
+} */
+
+.landing-container {
+  /* border: 2px solid red; */
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-image: url("/image.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  /* padding: 0; */
+  width: 100%;
+  /* backdrop-filter: blur(15px); */
+  /* z-index: -1; */
+  /* filter: blur(.8px); */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  overflow-y: hidden;
+}
+
+.landing-container .text-center {
+  /* background: linear-gradient(black, white);  */
+  /* Linear gradient background */
+  color: black;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Box shadow */
+  backdrop-filter: blur(5px);
+  padding: 2rem 3rem 2rem 2rem;
+  height: 60vh;
+  z-index: 1;
+  margin-left: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.landing-container .text-center .btn {
+  background-color: rgba(248, 166, 151, 0.781);
+}
+
+.landing-container .text-center .btn:hover {
+  background-color: rgb(54, 54, 61);
+}
+
+/* Parent container to control height */
+.slide-up-container {
+  height: 50px; /* Your desired height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* Prevent overflow */
+}
+
+/* Wrapper to center the text */
+.slide-up-wrapper {
+  position: relative;
+  height: 50px;
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+/* Animate the text smoothly with a pause at the center */
+.slide-up-text {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 3rem;
+  font-weight: bold;
+  animation: slideUpWithPause 2.5s ease-in-out infinite;
+}
+
+@keyframes slideUpWithPause {
+  0% {
+    transform: translateY(20%); /* Start below the container */
+    opacity: 0;
+  }
+  40% {
+    transform: translateY(0); /* Pause at the center */
+    opacity: 1;
+  }
+  60% {
+    transform: translateY(0); /* Stay at the center */
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100%); /* Move above the container */
+    opacity: 0;
+  }
+}
