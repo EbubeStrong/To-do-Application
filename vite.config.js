@@ -2,20 +2,17 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import tailwindcss from "tailwindcss";
 import autoprefixer from "autoprefixer";
-import path from "path"; // Import path module
+import path from "path";
 
 export default defineConfig({
   plugins: [
-    react(), // React plugin
+    react(),
     {
-      name: "vite-plugin-tailwindcss", // Explicitly define the plugin for Tailwind CSS
+      name: "vite-plugin-tailwindcss",
       config: () => ({
         css: {
           postcss: {
-            plugins: [
-              tailwindcss(), // Use the Tailwind CSS plugin
-              autoprefixer(), // Autoprefixer for browser compatibility
-            ],
+            plugins: [tailwindcss(), autoprefixer()],
           },
         },
       }),
@@ -23,10 +20,15 @@ export default defineConfig({
   ],
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "./src"), // Correct alias configuration
+      "@": path.resolve(__dirname, "./src"), // Correct alias for "@" paths
     },
   },
   server: {
-    port: 5000, // Port number as a number, not a string
+    port: 5000,
+  },
+  build: {
+    rollupOptions: {
+      external: ["@radix-ui/react-alert-dialog"], // Mark Radix UI as external
+    },
   },
 });
