@@ -28,13 +28,12 @@ export default defineConfig({
   },
   build: {
     rollupOptions: {
-      // Remove `@radix-ui/react-alert-dialog` from `external`, it should be bundled
       input: path.resolve(__dirname, "index.html"), // Ensure the main entry is correctly resolved
       output: {
-        // Ensure correct output bundling of JavaScript and assets
         dir: "dist", // Output directory
         format: "es", // ES module format
       },
     },
   },
+  base: "/", // Optional: If you're deploying to the root
 });
