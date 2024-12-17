@@ -11,7 +11,7 @@ const LandingPage = () => {
     useEffect(() => {
       const interval = setInterval(() => {
         setCurrentWordIndex((prevIndex) => (prevIndex + 1) % words.length);
-      }, 2500); // Adjust timing to match the animation duration
+      }, 2500); 
 
       return () => clearInterval(interval); // Cleanup on component unmount
     }, [words.length]);
@@ -19,9 +19,6 @@ const LandingPage = () => {
   return (
     <div className="landing-container">
       <div className="text-center">
-        {/* <h1 className="text-6xl font-bold mb-10 transition-all duration-800 ease-in-out">
-          {words[currentWordIndex]}
-        </h1> */}
         <div className="slide-up-wrapper">
           <h1
             key={currentWordIndex}

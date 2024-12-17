@@ -229,7 +229,7 @@ const TodoList = () => {
           {currentTodos.map((todo) => (
             <li
               key={todo.id}
-              className={`p-4 rounded shadow flex justify-between items-center w-full sm:justify-start sm:space-x-4 ${
+              className={`p-4 rounded shadow flex justify-between items-center w-full sm:space-x-4 ${
                 todo.completed ? "bg-green-100" : "bg-red-50"
               }`}
               style={{ maxWidth: '100%' }}

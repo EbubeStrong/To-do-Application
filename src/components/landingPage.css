@@ -1,25 +1,4 @@
-/* Sliding animation for the h1
-.slide-up-enter {
-  opacity: 0;
-  transform: translateY(100%);
-}
-.slide-up-enter-active {
-  opacity: 1;
-  transform: translateY(0);
-  transition: opacity 1s, transform 1s ease-in-out;
-}
-.slide-up-exit {
-  opacity: 1;
-  transform: translateY(0);
-}
-.slide-up-exit-active {
-  opacity: 0;
-  transform: translateY(-100%);
-  transition: opacity 1s, transform 1s ease-in-out;
-} */
-
 .landing-container {
-  /* border: 2px solid red; */
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -29,21 +8,15 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  /* padding: 0; */
   width: 100%;
-  /* backdrop-filter: blur(15px); */
-  /* z-index: -1; */
-  /* filter: blur(.8px); */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
   overflow-y: hidden;
 }
 
 .landing-container .text-center {
-  /* background: linear-gradient(black, white);  */
-  /* Linear gradient background */
   color: black;
   text-align: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Box shadow */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(5px);
   padding: 2rem 3rem 2rem 2rem;
   height: 60vh;
@@ -63,16 +36,14 @@
   background-color: rgb(54, 54, 61);
 }
 
-/* Parent container to control height */
 .slide-up-container {
-  height: 50px; /* Your desired height */
+  height: 50px; 
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden; /* Prevent overflow */
+  overflow: hidden;
 }
 
-/* Wrapper to center the text */
 .slide-up-wrapper {
   position: relative;
   height: 50px;
@@ -80,7 +51,6 @@
   margin-bottom: 40px;
 }
 
-/* Animate the text smoothly with a pause at the center */
 .slide-up-text {
   position: absolute;
   top: 0;
@@ -93,19 +63,19 @@
 
 @keyframes slideUpWithPause {
   0% {
-    transform: translateY(20%); /* Start below the container */
+    transform: translateY(20%);
     opacity: 0;
   }
   40% {
-    transform: translateY(0); /* Pause at the center */
+    transform: translateY(0); 
     opacity: 1;
   }
   60% {
-    transform: translateY(0); /* Stay at the center */
+    transform: translateY(0); 
     opacity: 1;
   }
   100% {
-    transform: translateY(-100%); /* Move above the container */
+    transform: translateY(-100%); 
     opacity: 0;
   }
 }
