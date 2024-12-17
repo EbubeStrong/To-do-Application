@@ -24,11 +24,17 @@ export default defineConfig({
     },
   },
   server: {
-    port: 5000,
+    port: 5000, // Local dev server on port 5000
   },
   build: {
     rollupOptions: {
-      external: ["@radix-ui/react-alert-dialog"], // Mark Radix UI as external
+      // Remove `@radix-ui/react-alert-dialog` from `external`, it should be bundled
+      input: path.resolve(__dirname, "index.html"), // Ensure the main entry is correctly resolved
+      output: {
+        // Ensure correct output bundling of JavaScript and assets
+        dir: "dist", // Output directory
+        format: "es", // ES module format
+      },
     },
   },
 });
