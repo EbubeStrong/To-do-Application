@@ -229,16 +229,16 @@ const TodoList = () => {
           {currentTodos.map((todo) => (
             <li
               key={todo.id}
-              className={`p-4 rounded shadow flex justify-between items-center w-full sm:space-x-4 ${
+              className={`p-4  rounded shadow flex justify-between items-center w-[100%] sm:space-x-4 ${
                 todo.completed ? "bg-green-100" : "bg-red-50"
               }`}
               style={{ maxWidth: '100%' }}
             >
 
-              <div>
+              <div className="w-[100%]">
                 <Link
                   to={`/todo/${todo.id}`}
-                  className="text-lg font-semibold text-blue-600 hover:text-blue-800"
+                  className="text-lg font-semibold text-blue-600 w-[100%] hover:text-blue-800"
                 >
                   {todo.title}
                 </Link>
@@ -247,7 +247,7 @@ const TodoList = () => {
                   <p>Due: {new Date(todo.dueDate).toLocaleDateString()}</p>
                 )}
               </div>
-              <div className="space-x-3 space-y-3 sm:break-words">
+              <div className="space-x-3 space-y-3 lg:flex-row lg:items-center sm:flex sm:flex-col sm:gap-2.5">
                 <Button
                   onClick={() => handleUpdateTodo(todo)}
                   variant="outline"
