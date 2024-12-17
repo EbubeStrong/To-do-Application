@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Button } from "../../components/components/ui/button";
 import "./landingPage.css"
 
-const words = ['Welcome', 'To', 'Your', 'Todo', 'App'];
+const words = ['Welcome', 'To', 'Your', 'To-do', 'App'];
 
 const LandingPage = () => {
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
@@ -28,7 +28,7 @@ const LandingPage = () => {
           </h1>
         </div>
         <p className="text-2xl mb-8">
-          To check your Todo, click below <br />
+          To check your To-do, click below <br />
           👇
         </p>
         <Button asChild>

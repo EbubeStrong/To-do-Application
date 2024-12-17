@@ -32,15 +32,17 @@ const TodoForm = ({ onCreateTodo }) => {
         value={title}
         onChange={(e) => setTitle(e.target.value)}
         className="flex-grow"
+        required
       />
       <div className="flex justify-between gap-4">
       <Input
         type="date"
         value={dueDate}
-        onChange={(e) => setDueDate(e.target.value)}
+          onChange={(e) => setDueDate(e.target.value)}
+          required
       />
       <Button type="submit" className=" hover:bg-green-700 ">
-        Add Todo
+        Add To-do
       </Button>
       </div>
     </form>
