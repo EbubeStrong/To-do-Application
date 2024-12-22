@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Button } from "../../components/components/ui/button";
+import { Link } from 'react-router-dom';
 
 const ErrorTest = () => {
   const [shouldError, setShouldError] = useState(false);
@@ -12,12 +13,16 @@ const ErrorTest = () => {
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
       <div className="bg-white p-8 rounded shadow-lg text-center">
         <h1 className="text-2xl font-bold mb-4">Error Boundary Test</h1>
-        <Button
-          onClick={() => setShouldError(true)}
-          variant="destructive"
-        >
-          Trigger Error
-        </Button>
+
+        <div className='flex flex-col space-x-4 justify-center gap-4 items-center '>
+          <Button onClick={() => setShouldError(true)} variant="destructive">
+            Trigger Error
+          </Button>
+
+          <Button>
+            <Link to="/">Back To Home</Link>
+          </Button>
+        </div>
       </div>
     </div>
   );

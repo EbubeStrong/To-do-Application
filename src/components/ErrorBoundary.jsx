@@ -19,7 +19,7 @@ class ErrorBoundary extends React.Component {
     if (this.state.hasError) {
       return (
         <div className="min-h-screen flex items-center justify-center bg-red-100">
-          <Alert variant="destructive">
+          <Alert variant="destructive" className="max-w-[500px] ">
             <AlertTitle>Oops! Something went wrong.</AlertTitle>
             <AlertDescription>
               We're sorry, but an error occurred. Please try refreshing the page.

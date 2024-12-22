@@ -7,9 +7,9 @@ import Spinner from "./components/Spinner";
 import ErrorBoundary from "./components/ErrorBoundary";
 import "./App.css";
 
-const LandingPage = lazy(() => import("./components/LandingPage"));
-const TodoList = lazy(() => import("./components/TodoList"));
-const TodoDetails = lazy(() => import("./components/TodoDetails"));
+const LandingPage = lazy(() => import("./Pages/LandingPage"));
+const TodoList = lazy(() => import("./Pages/TodoList"));
+const TodoDetails = lazy(() => import("./Pages/TodoDetails"));
 const NotFound = lazy(() => import("./components/NotFound"));
 const ErrorTest = lazy(() => import("./components/ErrorTest"));
 
@@ -22,8 +22,8 @@ function App() {
         <ErrorBoundary>
           <Suspense fallback={<Spinner />}>
             <Routes>
+              <Route index element={<LandingPage />} />
               <Route path="/" element={<Layout />}>
-                <Route index element={<LandingPage />} />
                 <Route path="todos" element={<TodoList />} />
                 <Route path="todo/:id" element={<TodoDetails />} />
                 <Route path="error-test" element={<ErrorTest />} />

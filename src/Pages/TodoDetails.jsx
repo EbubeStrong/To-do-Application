@@ -6,7 +6,7 @@ import { Button } from "../../components/components/ui/button";
 import { Input } from "../../components/components/ui/input";
 import { Checkbox } from "../../components/components/ui/checkbox";
 import { useToast } from "../../components/hooks/use-toast";
-import Spinner from "./Spinner";
+import Spinner from "../components/Spinner";
 
 const fetchTodo = async (id) => {
   const storedTodos = JSON.parse(localStorage.getItem("todos")) || [];
