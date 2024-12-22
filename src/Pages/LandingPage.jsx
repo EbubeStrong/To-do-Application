@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "../../components/components/ui/button";
-import "../styles/LandingPage.css";
+import "../styles/landingPage.css";
 import Header from "../components/Header";
 
 const words = ["Welcome", "To", "Your", "To-do", "App"];
