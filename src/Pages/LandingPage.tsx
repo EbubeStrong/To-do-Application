@@ -1,21 +1,25 @@
-import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import { Button } from "../../components/components/ui/button";
-import "../styles/landingPage.css";
-import Header from "../components/Header";
+"use client"
 
-const words = ["Welcome", "To", "Your", "To-do", "App"];
+import type React from "react"
 
-const LandingPage = () => {
-  const [currentWordIndex, setCurrentWordIndex] = useState(0);
+import { useState, useEffect } from "react"
+import { Link } from "react-router-dom"
+import { Button } from "../../components/components/ui/button"
+import "../styles/landingPage.css"
+import Header from "../components/Header"
+
+const words: string[] = ["Welcome", "To", "Your", "To-do", "App"]
+
+const LandingPage: React.FC = () => {
+  const [currentWordIndex, setCurrentWordIndex] = useState<number>(0)
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentWordIndex((prevIndex) => (prevIndex + 1) % words.length);
-    }, 2500);
+      setCurrentWordIndex((prevIndex) => (prevIndex + 1) % words.length)
+    }, 2500)
 
-    return () => clearInterval(interval); // Cleanup on component unmount
-  }, [words.length]);
+    return () => clearInterval(interval) 
+  }, [])
 
   return (
     <>
@@ -28,8 +32,7 @@ const LandingPage = () => {
             </h1>
           </div>
           <p className="text-2xl mb-8">
-            To check your To-do, click below <br />
-            👇
+            To check your To-do, click below <br />👇
           </p>
           <Button asChild>
             <Link
@@ -42,7 +45,7 @@ const LandingPage = () => {
         </div>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default LandingPage;
+export default LandingPage

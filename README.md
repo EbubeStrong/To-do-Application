@@ -2,7 +2,7 @@
 
 ## Overview
 
-This project is Todo application built with React, leveraging modern web development practices and libraries. It provides a robust set of features for managing tasks, including creation, updating, deletion, and detailed views of todos.
+This project is Todo application built with React and TypeScript, leveraging modern web development practices and libraries. It provides a robust set of features for managing tasks, including creation, updating, deletion, and detailed views of todos.
 
 ## Features
 
@@ -22,6 +22,7 @@ This project is Todo application built with React, leveraging modern web develop
 ## Tech Stack
 
 - React
+- TypeScript
 - React Router for navigation
 - React Query for server state management
 - Axios for API requests
