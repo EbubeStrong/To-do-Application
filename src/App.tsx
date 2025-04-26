@@ -1,8 +1,7 @@
 import { Suspense, lazy } from "react"
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom"
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
-// import { Toaster } from "../components/components/ui/sonner"
-import { Toaster } from 'sonner';
+import { Toaster } from "../components/components/ui/sonner"
 import Layout from "./components/Layout"
 import Spinner from "./components/Spinner"
 import ErrorBoundary from "./components/ErrorBoundary"
