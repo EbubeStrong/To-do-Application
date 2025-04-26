@@ -1,8 +1,9 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { Button } from "../../components/components/ui/button";
+import type React from "react"
+import { Link } from "react-router-dom"
+import { Button } from "../../components/components/ui/button"
+import type { SidebarProps } from "../types"
 
-const Sidebar = ({ isOpen}) => {
+const Sidebar: React.FC<SidebarProps> = ({ isOpen }) => {
   return (
     <aside
       className={`fixed top-0 left-0 z-50 h-full bg-white shadow-lg transform transition-transform duration-300 ease-in-out ${
@@ -44,7 +45,7 @@ const Sidebar = ({ isOpen}) => {
         </footer>
       </div>
     </aside>
-  );
-};
+  )
+}
 
-export default Sidebar;
+export default Sidebar
